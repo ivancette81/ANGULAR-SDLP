@@ -1,0 +1,104 @@
+<p>
+<mat-toolbar>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click) = "onBasketsClick()">
+        <mat-icon>shopping_basket</mat-icon>
+        <span>Cestas</span>
+      </button>
+      <button mat-menu-item (click) = "onBabyClick()">
+        <mat-icon>face</mat-icon>
+        <span>Especial bebés</span>
+      </button>
+      <button mat-menu-item (click) = "onSingleSoapClick()">
+        <mat-icon>redeem</mat-icon>
+        <span>Jabones sueltos</span>
+      </button>
+    </mat-menu>
+    <span>Los jabones de Soraya</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar>
+</p>
+
+<div *ngIf="!isSelectedBaskets&&!isSelectedBaby&&!isSelectedSingleSoap">
+<div>
+  <img src="https://thumbs.dreamstime.com/b/jabones-verdes-28619155.jpg" alt="">
+  <h1>cestas de jabones</h1>
+</div>
+<div>
+  <img src="https://www.bebedeparis.com/9476-large_default/cesta-bebe-clasica-ensueno.jpg" alt="">
+  <h1>cestas para bebes</h1>
+</div>
+</div>
+
+<div *ngIf="isSelectedBaskets">
+<mat-card class="example-card">
+  <mat-card-title-group>
+    <mat-card-title>Cesta Verdelis</mat-card-title>
+    <mat-card-subtitle>Relax y bienestar, porque tú, mujer, lo mereces</mat-card-subtitle>
+    <img mat-card-xl-image src="https://thumbs.dreamstime.com/b/jabones-verdes-28619155.jpg" >
+  </mat-card-title-group>
+  <mat-card-content>
+    {{longText}}
+  </mat-card-content>
+</mat-card>
+</div>
+
+<div *ngIf="isSelectedBaby">
+  <mat-card class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>Cesta Azulís</mat-card-title>
+      <mat-card-subtitle>Relax y bienestar, porque tú, mujer, lo mereces</mat-card-subtitle>
+      <img mat-card-xl-image src="https://www.bebedeparis.com/9476-large_default/cesta-bebe-clasica-ensueno.jpg" >
+    </mat-card-title-group>
+    <mat-card-content>
+      {{longText}}
+    </mat-card-content>
+  </mat-card>
+  </div>
+
+  <div *ngIf="isSelectedSingleSoap">
+    <mat-card class="example-card">
+      <mat-card-title-group>
+        <mat-card-title>Jabón Marronlís</mat-card-title>
+        <mat-card-subtitle>Relax y bienestar, porque tú, mujer, lo mereces</mat-card-subtitle>
+        <img mat-card-xl-image src="https://science-teaching.org/wp-content/uploads/2021/01/jabon-portada-700x351-2.jpg" >
+      </mat-card-title-group>
+      <mat-card-content>
+        {{longText}}
+      </mat-card-content>
+    </mat-card>
+    </div>
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col-md-2" style = "background-color:blueviolet;">
+      primer div
+    </div>
+    <div class="col-md-2" style = "background-color:bisque;">
+      segundo div
+    </div>
+  </div>
+</div>
+-->
+<!--
+<app-header></app-header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <input type="button" value="Button1" class="btn btn-primary"/>
+      <app-recipes></app-recipes>
+      <app-shopping-list></app-shopping-list>
+    </div>
+  </div>
+</div>
+-->
